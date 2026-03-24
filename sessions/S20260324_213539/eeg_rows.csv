@@ -1,0 +1,1 @@
+timestamp_ms,session_id,participant_id,signal_quality,attention,meditation,delta,theta,low_alpha,high_alpha,low_beta,high_beta,low_gamma,mid_gamma,emo_calm,emo_stressed,emo_delighted,emo_angry,emo_unknown,ev_speaking,ev_question,ev_scolded,ev_praised,ev_qna,ev_tech_issue,annotator_confidence
