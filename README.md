@@ -12,4 +12,7 @@ Timestamp,Signal_Quality,Attention,Meditation,Delta,Theta,Low_Alpha,High_Alpha,L
 ## Run
 1. Set `COM_PORT` in `main.py` (example: `COM3`).
 2. Install deps: `uv sync`
-3. Start logger: `uv run .\main.py`
+3. Start logger: `uv run .\main.py` for only raw data
+    `uv run collector_ui.py` for tkinter ui based data collection
+    
+
