@@ -83,7 +83,7 @@ class EmotionDetectorUI:
         try:
             # LightGBM is a tree-based model, doesn't need scaling
             self.predictor = MindTunePredictor(
-                "lightgbm.pkl", "scaler_2.pkl", needs_scaling=False
+                "lightgbm_nomarker.pkl", "scaler_nomarker.pkl", needs_scaling=False
             )
             self.model_loaded = True
             print("[OK] ✓ Model loaded successfully (LightGBM)")

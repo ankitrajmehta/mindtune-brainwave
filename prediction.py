@@ -113,7 +113,7 @@ class MindTunePredictor:
 # --- TEST ---
 if __name__ == "__main__":
     # LightGBM doesn't need scaling (tree-based model)
-    predictor = MindTunePredictor("lightgbm.pkl", "scaler_2.pkl", needs_scaling=False)
+    predictor = MindTunePredictor("lightgbm_nomarker.pkl", "scaler_nomarker.pkl", needs_scaling=False)
 
     csv_path = Path(__file__).resolve().parent / "all_sessions_eeg_with_markers.csv"
     df = pd.read_csv(csv_path)
