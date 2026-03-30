@@ -11,4 +11,5 @@ wheels/
 mindtunecd/
 sessions/
 
-*.csv
+# *.csv
+*.ipynb_checkpoints
