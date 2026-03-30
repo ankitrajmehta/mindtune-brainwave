@@ -566,13 +566,20 @@ class CollectorApp:
             "note",
         ]
 
-        self.eeg_file = open(eeg_path, mode="w", newline="", encoding="utf-8")
-        self.eeg_writer = csv.writer(self.eeg_file)
-        self.eeg_writer.writerow(eeg_headers)
+        eeg_has_data = os.path.exists(eeg_path) and os.path.getsize(eeg_path) > 0
+        markers_has_data = (
+            os.path.exists(markers_path) and os.path.getsize(markers_path) > 0
+        )
 
-        self.marker_file = open(markers_path, mode="w", newline="", encoding="utf-8")
+        self.eeg_file = open(eeg_path, mode="a", newline="", encoding="utf-8")
+        self.eeg_writer = csv.writer(self.eeg_file)
+        if not eeg_has_data:
+            self.eeg_writer.writerow(eeg_headers)
+
+        self.marker_file = open(markers_path, mode="a", newline="", encoding="utf-8")
         self.marker_writer = csv.writer(self.marker_file)
-        self.marker_writer.writerow(marker_headers)
+        if not markers_has_data:
+            self.marker_writer.writerow(marker_headers)
 
         metadata = {
             "session_id": session_id,
